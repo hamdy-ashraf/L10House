@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.watchVid {
+  @include bgImg("../L10_images/video-bg.jpg");
+  position: relative;
+
+  &::before {
+    @include pseudoElement(100%, 100%, 0, 0);
+    background: radial-gradient(#68b703, #305d00);
+    opacity: 0.8;
+  }
+
+  h2::before {
+    background-color: #fff;
+  }
+
+  i {
+    font-size: 50px;
+    margin-top: 40px;
+    transition-duration: 1s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+}

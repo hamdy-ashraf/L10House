@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+#WhyUs {
+  .cards {
+    row-gap: 30px;
+
+    .item {
+      padding-inline: 15px;
+
+      .sp-card {
+        border-radius: 10px;
+        position: relative;
+        @include responsive(350) {
+          width: 280px;
+          margin: auto;
+        }
+
+        @include responsive(1050) {
+          width: initial;
+          margin: auto;
+        }
+
+        &::before {
+          @include pseudoElement(100%, 100%, 0, 0);
+          background-color: $secondColor;
+          border-radius: 10px;
+        }
+
+        .content {
+          position: relative;
+          transition-duration: 0.5s;
+          border-radius: 10px;
+          overflow: hidden;
+
+          &:hover {
+            transform: translate(
+              -10px,
+              10px
+            ); // why top, left do not respect duration ????
+          }
+
+          img {
+            width: 100%;
+          }
+
+          .content-inner {
+            background: linear-gradient(0deg, #1e2022 0%, transparent 75%);
+            h3 {
+              font-size: 25px;
+            }
+
+            p {
+              line-height: 1.5;
+
+              @include responsive(350) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.languagesPopup {
+    .box {
+        width: 40%;
+        margin: 0;
+        margin-left: auto;
+        position: relative;
+        transform: translateX(100%);
+        transition-duration: 1s;
+
+    @include responsive(350) {
+      width: 70%;
+    }
+
+    @include responsive(650) {
+      width: 50%;
+    }
+
+    @include responsive(1050) {
+      width: 40%;
+    }
+
+    section {
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      h3 {
+        position: relative;
+        margin-bottom: 15px;
+        font-size: 22px;
+        font-weight: bold;
+
+        @include responsive(350) {
+          font-size: 18px;
+        }
+
+        @include responsive(1050) {
+          font-size: 22px;
+        }
+
+        &::before {
+          @include pseudoElement(75px, 3px, 100%, 0);
+          border-radius: 10px;
+        }
+      }
+
+      &:nth-of-type(even),
+      &:nth-of-type(even) i {
+        color: $firstColor;
+
+        h3::before {
+          background-color: $firstColor;
+        }
+      }
+
+      &:nth-of-type(odd),
+      &:nth-of-type(odd) i {
+        color: $secondColor;
+
+        h3::before {
+          background-color: $secondColor;
+        }
+      }
+
+      ul li {
+        color: #000;
+
+        i {
+          cursor: initial;
+        }
+      }
+    }
+
+    i {
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      color: #000;
+      font-size: 18px;
+    }
+  }
+}

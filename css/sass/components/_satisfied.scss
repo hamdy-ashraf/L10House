@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.satisfied {
+  .owl-theme {
+
+    img {
+        width: 65%;
+        margin: auto;
+    }
+
+    .owl-dots .owl-dot {
+      &.active span,
+      &:hover span {
+        background: $secondColor;
+        opacity: 1;
+      }
+      span {
+        background: $secondColor;
+        opacity: 0.5;
+      }
+    }
+  }
+}

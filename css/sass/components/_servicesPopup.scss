@@ -1,0 +1,57 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.popup {
+    
+  .box {
+    @include popupBoxPro();
+    .body {
+      .part1 {
+        .box1 {
+          @include responsive(350) {
+            margin-bottom: 20px;
+          }
+        }
+        img {
+          display: block;
+          margin: auto;
+        }
+      }
+
+      .part2 {
+        h5 {
+          font-size: 20px;
+          @include responsive(350) {
+            font-size: 16px;
+          }
+
+          @include responsive(850) {
+            font-size: 20px;
+          }
+        }
+
+        li {
+          color: #000;
+          @include responsive(350) {
+            font-size: 13px;
+          }
+
+          @include responsive(850) {
+            font-size: 18px;
+          }
+
+          &::marker {
+            color: $secondColor;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    i {
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+}

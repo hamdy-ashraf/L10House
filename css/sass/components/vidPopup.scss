@@ -1,0 +1,26 @@
+@use "../abstracts/mixins" as *;
+
+.popup.vidPopup {
+  width: 100%;
+
+  .box {
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include responsive(350) {
+      width: 90%;
+      height: 300px;
+    }
+
+    @include responsive(650) {
+      width: 500px;
+      height: 400px;
+    }
+
+    @include responsive(850) {
+      width: 600px;
+    }
+  }
+}

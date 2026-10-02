@@ -1,0 +1,37 @@
+@use "../abstracts/mixins" as *;
+
+#AboutUs {
+  .part1 {
+    @include responsive(350) {
+      .item {
+        width: 280px;
+        margin: auto;
+        margin-bottom: 30px;
+      }
+    }
+
+    @include responsive(450) {
+      .item {
+        width: 350px;
+      }
+    }
+
+    @include responsive(850) {
+      .item {
+        width: 500px;
+      }
+    }
+
+    @include responsive(1050) {
+      .item {
+        width: initial;
+      }
+    }
+  }
+
+  .part2 {
+    p {
+      letter-spacing: 0.5px;
+    }
+  }
+}

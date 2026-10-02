@@ -1,0 +1,39 @@
+@use "../abstracts/mixins" as *;
+
+.sectorsPopup {
+  .item {
+    background-color: #ebfbee;
+    .image {
+      margin: 0 auto 15px;
+      width: 25%;
+
+      @include responsive(650) {
+        width: 15%;
+      }
+
+      @include responsive(850) {
+        width: 10%;
+      }
+
+      @include responsive(1050) {
+        width: 50%;
+      }
+    }
+
+    p {
+      background-color: #dfeee2;
+      font-size: 12px;
+      color: #000;
+
+      @include responsive(1050) {
+        //   font-size: 14px;
+      }
+    }
+  }
+
+  i {
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+}

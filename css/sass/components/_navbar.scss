@@ -1,0 +1,96 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-inline: 0;
+}
+
+nav.navbar {
+  transition-duration: 0.5s;
+
+  .navbar-brand {
+    width: 12%;
+    transition-duration: 0.5s;
+    @include responsive(350) {
+      width: 20%;
+    }
+
+    @include responsive(650) {
+      width: 16%;
+    }
+
+    @include responsive(1050) {
+      width: 12%;
+    }
+  }
+
+  .nav-link {
+    color: $firstColor;
+    font-weight: 700;
+    position: relative;
+    width: fit-content;
+
+    &::before {
+      @include pseudoElement(0, 2px, 100%, 50%);
+      background-color: $secondColor;
+      transition-duration: 0.5s;
+      transform: translateY(-50%);
+    }
+
+    &.active {
+      color: $firstColor;
+    }
+
+    &.active::before {
+      @include pseudoElement(100%, 2px, 100%, 0);
+      background-color: $secondColor;
+    }
+
+    &:hover::before {
+      @include pseudoElement(100%, 2px, 100%, 0);
+    }
+  }
+
+  .navbar-collapse {
+    @include responsive(350) {
+      background-color: #fff;
+      border-radius: 10px;
+      padding-block: 10px;
+      margin-top: 20px;
+    }
+
+    @include responsive(1050) {
+      background-color: transparent;
+      margin-top: 0;
+    }
+    .nav-link {
+      margin: auto;
+
+      @include responsive(350) {
+        &:last-child {
+          // How !!!!!!!!!!!!!!!!!!
+          margin-bottom: 10px;
+        }
+      }
+
+      @include responsive(1050) {
+        font-size: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  &.scrolled {
+    background-color: #fff;
+
+    .navbar-brand {
+      width: 8%;
+    }
+  }
+}

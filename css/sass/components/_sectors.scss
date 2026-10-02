@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.sectors {
+  @include bgImg("../L10_images/youth.jpg");
+  position: relative;
+
+  &::before {
+    @include pseudoElement(100%, 100%, 0, 0);
+    background: radial-gradient(#68b703, #305d00);
+    opacity: 0.8;
+  }
+
+  h2::before {
+    background-color: #fff;
+  }
+
+  .buttons {
+    margin-top: 50px;
+
+    button {
+      transition-duration: 0.5s;
+      transition-property: transform;
+
+      &:hover {
+        transform: translateY(-10px);
+        color: $secondColor;
+        background-color: #fff;
+        border-color: transparent;
+      }
+    }
+  }
+}

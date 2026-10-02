@@ -1,0 +1,123 @@
+@use "../abstracts/" as *;
+
+#Home {
+  .part1 {
+    @include center(flex-start);
+    @include responsive(350) {
+      margin-top: 80px;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: $firstColor;
+      font-weight: 700;
+      @include responsive(350) {
+        font-size: 30px;
+      }
+
+      @include responsive(850) {
+        font-size: 50px;
+      }
+    }
+
+    .headAnimate {
+      font-size: 20px;
+      color: $secondColor;
+      font-weight: 500;
+
+      .cd-words-wrapper::after {
+        background-color: $secondColor;
+      }
+    }
+
+    .icon {
+      i {
+        color: $firstColor;
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        @include center();
+        flex-direction: column;
+        color: $firstColor;
+        transition-duration: 1s;
+
+        &:hover {
+          color: #fff;
+        }
+
+        &::before {
+          z-index: 2;
+        }
+
+        &::after {
+          @include pseudoElement(0%, 0%, 50%, 50%);
+          border-radius: 50%;
+          transition-duration: 1s;
+          transform: translate(-50%, -50%);
+        }
+
+        &:hover::after {
+          @include pseudoElement(100%, 100%, 50%, 50%);
+          background-color: $firstColor;
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .part2 {
+    @include center();
+    @include responsive(350) {
+      .item {
+        width: 70%;
+        margin: auto;
+      }
+
+      @include responsive(450) {
+        .item {
+          width: 60%;
+        }
+      }
+
+      @include responsive(650) {
+        .item {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  > img {
+    transform: rotateX(180deg);
+  }
+
+  .arrows {
+    @include position($l: 50%, $b: 70px);
+    transform: translateX(-50%);
+
+    width: 20px;
+
+    @include responsive(350) {
+      display: none;
+    }
+
+    @include responsive(650) {
+      display: block;
+    }
+
+    img {
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          @include Animation(headerAnimate#{$i}, 3s);
+        }
+      }
+    }
+
+    img:not(:last-child) {
+      @include position();
+    }
+  }
+}
