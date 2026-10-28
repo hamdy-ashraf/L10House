@@ -1,4 +1,9 @@
 let data = [];
+// console.log(sections);
+// co
+let sections = document.querySelectorAll("section[id], header"),
+  navBar = document.querySelector("nav.navbar");
+
 (async function () {
   let res = await fetch("https://semicode.tech/api/v1/l10nhouse/services");
   data = await res.json();
@@ -7,7 +12,7 @@ let data = [];
 
   for (let service of data) {
     $("#Services .row").append(`
-            <div class="col-md-6">
+            <div class="col-md-6 wow ${(i + 1) % 2 == 0 ? "animate__fadeInRight" : "animate__fadeInLeft"}" data-wow-delay="${0.2 * i}s">
                 <div class="item h-100 p-4 mx-5 text-center rounded-5">
                   <div class="image">
                     <img src="./L10_images/${service.icon}" class="img-fluid" alt="" />
@@ -67,8 +72,6 @@ $(window).scroll(function () {
     data = await res.json();
 
   prepareSectionsInLanguages(data);
-  console.log(data);
-  console.log(data[0]);
 })();
 
 $(document).ready(function () {
@@ -97,5 +100,29 @@ $(document).ready(function () {
         items: 5,
       },
     },
+  });
+});
+
+new WOW({
+  animateClass: "animate__animated",
+}).init();
+
+let navLinks = document.querySelectorAll(".nav-link");
+window.addEventListener("scroll", function () {
+  sections.forEach(function (section) {
+    updateNavLink(section.id);
+  });
+});
+
+navLinks.forEach(function (navLink) {
+  navLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    let currentNavLink = document.querySelector(".nav-link.active"),
+      currentId = navLink.getAttribute("href"),
+      currentSection = document.querySelector(currentId),
+      topOfSection = currentSection.offsetTop;
+    window.scrollTo(0, topOfSection - (navBar.clientHeight));
+    currentNavLink.classList.remove("active");
+    navLink.classList.add("active");
   });
 });

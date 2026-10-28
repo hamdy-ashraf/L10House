@@ -13,6 +13,10 @@ p {
 
 section {
   padding-block: 40px;
+
+  &:hover h2::before {
+    width: 75%;
+  }
 }
 
 .firstColor {
@@ -51,10 +55,6 @@ section {
       background-color: $secondColor;
       border-radius: 10px;
       transition-duration: 0.5s;
-    }
-
-    &:hover::before {
-      width: 75%;
     }
   }
 }

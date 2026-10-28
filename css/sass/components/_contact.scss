@@ -11,6 +11,10 @@
     opacity: 0.8;
   }
 
+  .part {
+    padding: 20px;
+  }
+
   .box1 {
     form {
       input,
@@ -46,31 +50,26 @@
     }
 
     .media {
-      i {
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        @include center();
+      li {
         border-radius: 50%;
-
-        &[fa-facebook-f] {
-        }
-
-        &[fa-instagram] {
-        }
-
-        &[fa-youtube] {
+        i {
+          color: #fff;
+          width: 40px;
+          height: 40px;
+          @include center();
+          border-radius: 50%;
         }
       }
-      i:nth-of-type(1) {
+
+      li:nth-of-type(1) {
         background-color: #0045b5;
       }
 
-      i:nth-of-type(2) {
+      li:nth-of-type(2) {
         background-color: #c52661;
       }
 
-      i:nth-of-type(3) {
+      li:nth-of-type(3) {
         background-color: #f70000;
       }
     }

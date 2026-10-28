@@ -91,6 +91,17 @@ nav.navbar {
 
     .navbar-brand {
       width: 8%;
+      @include responsive(350) {
+        width: 15%;
+      }
+
+      @include responsive(650) {
+        width: 10%;
+      }
+
+      @include responsive(1050) {
+        width: 8%;
+      }
     }
   }
 }

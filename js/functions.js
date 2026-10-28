@@ -26,6 +26,10 @@ function closePopup() {
   $(`.popup`).delay(1000).fadeOut(1000);
 }
 
+function moveActive() {
+  let currentActive = document.querySelectorAll(".nav-link");
+}
+
 function preparePoints(points) {
   let pointEle = ``;
 
@@ -121,5 +125,20 @@ function prepareSectionsInLanguages(sections) {
     </section>
     `,
     );
+  }
+}
+
+function updateNavLink(sectionId) {
+  let section = document.querySelector(`#${sectionId}`),
+    sectionTop = section.offsetTop,
+    sectionHeight = section.clientHeight,
+    sectionBottom = sectionTop + sectionHeight;
+
+  if (window.scrollY > sectionTop - (navBar.clientHeight + 100) && window.scrollY < sectionBottom) {
+    let sectionId = section.getAttribute("id"),
+      currentNavLink = document.querySelector(".nav-link.active"),
+      navLinkOfSection = document.querySelector(`a[href="#${sectionId}"]`);
+    currentNavLink.classList.remove("active");
+    navLinkOfSection.classList.add("active");
   }
 }

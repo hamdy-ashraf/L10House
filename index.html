@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="./css/plugins/headAnimate.css" />
     <link rel="stylesheet" href="./css/plugins/owl.carousel.min.css" />
     <link rel="stylesheet" href="./css/plugins/owl.theme.default.css" />
+    <link rel="stylesheet" href="./css/plugins/animate.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/index.responsive.css" />
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg position-fixed z-1 w-100">
+    <nav class="navbar navbar-expand-lg position-fixed z-3 w-100">
       <div class="container">
         <a class="navbar-brand" href="#"
           ><img src="./L10_images/logo.png" class="img-fluid" alt=""
@@ -50,7 +51,7 @@
               <a class="nav-link" href="#Language">Language & Sectors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#ContacUs">Contact Us</a>
+              <a class="nav-link" href="#ContactUs">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#NewVendor">New Vendor!</a>
@@ -83,7 +84,7 @@
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-sm-6 part1">
-            <div class="item">
+            <div class="item wow animate__fadeInLeft" data-wow-duration="1.5s">
               <h1>L10N House</h1>
               <p class="my-4">will help you communicate your message</p>
               <div class="cd-intro m-0">
@@ -111,7 +112,8 @@
             <div class="item">
               <img
                 src="./L10_images/globe-png-39540.png"
-                class="img-fluid m-auto d-block"
+                class="img-fluid m-auto d-block wow animate__zoomIn"
+                data-wow-duration="1.5s"
                 alt=""
               />
             </div>
@@ -123,7 +125,7 @@
         class="img-fluid position-absolute w-100 bottom-0 start-0"
         alt=""
       />
-      <a href="#About" class="arrows">
+      <a href="#AboutUs" class="arrows">
         <img src="./L10_images/arrow-down.png" class="img-fluid" alt="" />
         <img src="./L10_images/arrow-down.png" class="img-fluid" alt="" />
         <img src="./L10_images/arrow-down.png" class="img-fluid" alt="" />
@@ -133,17 +135,20 @@
     <!-- About Section -->
     <section id="AboutUs" class="bg-body">
       <div class="container">
-        <div class="title">
+        <div class="title wow animate__heartBeat" data-wow-duration="1.5s">
           <h2 class="secondColor fw-bolder">ABOUT US</h2>
         </div>
         <div class="row mt-5">
           <div class="col-lg-5 part1">
-            <div class="item rounded-3 overflow-hidden">
+            <div
+              class="item rounded-3 overflow-hidden wow animate__zoomIn"
+              data-wow-duration="1.5s"
+            >
               <img src="./L10_images/about.png" class="img-fluid" alt="" />
             </div>
           </div>
           <div class="col-lg-7 part2 px-4">
-            <div class="item">
+            <div class="item wow animate__bounceIn" data-wow-duration="1.5s">
               <p>
                 Located in the heart of dynamic Egypt,
                 <span class="fw-bold firstColor">L10N</span>
@@ -174,7 +179,7 @@
     <!-- Services Section -->
     <section id="Services">
       <div class="container">
-        <div class="title">
+        <div class="title wow animate__heartBeat" data-wow-duration="1.5s">
           <h2 class="secondColor fw-bolder">Services</h2>
         </div>
         <div class="row row-gap-5"></div>
@@ -194,7 +199,10 @@
     <section class="watchVid">
       <div class="container">
         <div class="title position-relative">
-          <h2 class="secondColor fw-bolder text-light text-center">
+          <h2
+            class="secondColor fw-bolder wow animate__heartBeat text-light text-center"
+            data-wow-duration="1.5s"
+          >
             WATCH VIDEO
           </h2>
           <i class="fab fa-youtube text-light" onclick="openPopup('video')"></i>
@@ -228,11 +236,11 @@
     <!-- Why Us Section -->
     <section id="WhyUs">
       <div class="container">
-        <div class="title">
+        <div class="title wow animate__heartBeat" data-wow-duration="1.5s">
           <h2 class="secondColor fw-bolder">WHY US?</h2>
         </div>
         <div class="row cards">
-          <div class="col-lg-4">
+          <div class="col-lg-4 wow animate__flipInY">
             <div class="item">
               <div class="sp-card position-relative">
                 <div class="content">
@@ -254,7 +262,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 wow animate__flipInY">
             <div class="item">
               <div class="sp-card position-relative">
                 <div class="content">
@@ -285,7 +293,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 wow animate__flipInY">
             <div class="item">
               <div class="sp-card position-relative">
                 <div class="content">
@@ -318,7 +326,7 @@
     </section>
 
     <!-- Sectors Section -->
-    <section class="sectors">
+    <section id="Language" class="sectors">
       <div class="container">
         <div class="title position-relative">
           <h2 class="secondColor fw-bolder text-light text-center">
@@ -394,7 +402,7 @@
 
     <!-- Sectors Popup Section -->
     <div
-      class="popup sectorsPopup w-100 overflow-auto position-fixed"
+      class="popup sectorsPopup w-100 overflow-auto position-fixed z-3"
       onclick="closePopup()"
       data-popup-name="sectors"
     >
@@ -415,7 +423,7 @@
 
     <!-- Languages Popup Section -->
     <div
-      class="popup languagesPopup w-100 overflow-auto position-fixed overflow-x-hidden"
+      class="popup languagesPopup w-100 overflow-auto position-fixed z-3 overflow-x-hidden"
       onclick="closePopup()"
       data-popup-name="languages"
     >
@@ -440,7 +448,7 @@
         </div>
         <div class="row row-gap-5">
           <div class="col-lg-6 px-5 box1">
-            <div class="item p-4 bg-body rounded-4">
+            <div class="item part bg-body rounded-4 wow animate__bounceInLeft">
               <form action="" class="d-flex flex-column row-gap-4">
                 <div
                   class="inputGroup d-flex flex-column flex-lg-row column-gap-lg-4"
@@ -484,7 +492,9 @@
             </div>
           </div>
           <div class="col-lg-6 px-5 box2">
-            <div class="item bg-body p-4 rounded-4 d-flex flex-column row-gap-5">
+            <div
+              class="item bg-body part rounded-4 d-flex flex-column row-gap-5 wow animate__bounceInRight h-100"
+            >
               <div class="row">
                 <div class="col-1">
                   <div class="item">
@@ -514,7 +524,7 @@
               <div class="row">
                 <div class="col-1">
                   <div class="item">
-                   <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope"></i>
                   </div>
                 </div>
                 <div class="col-11">
@@ -526,9 +536,9 @@
               </div>
               <div class="media">
                 <ul class="list-unstyled d-flex column-gap-4">
-                    <li><i class="fab fa-facebook-f"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                    <li><i class="fab fa-youtube"></i></li>
+                  <li><i class="fab fa-facebook-f"></i></li>
+                  <li><i class="fab fa-instagram"></i></li>
+                  <li><i class="fab fa-youtube"></i></li>
                 </ul>
               </div>
             </div>
@@ -539,13 +549,17 @@
 
     <!-- Footer Section -->
     <footer class="py-4 text-center footerColor">
-        <p class="text-light m-0">&copy; 2026 <span class="fw-bold secondColor">Hamdy Ashraf</span>, TSC. | All Rights Reserved .</p>
+      <p class="text-light m-0">
+        &copy; 2026 <span class="fw-bold secondColor">Hamdy Ashraf</span>, TSC.
+        | All Rights Reserved .
+      </p>
     </footer>
 
     <script src="./js/bootstrap.js"></script>
     <script src="./js/jQuery.js"></script>
     <script src="./js/plugins/headAnimate.js"></script>
     <script src="./js/plugins/owl.carousel.min.js"></script>
+    <script src="./js/plugins/wow.min.js"></script>
     <script src="./js/functions.js"></script>
     <script src="./js/index.js"></script>
   </body>
